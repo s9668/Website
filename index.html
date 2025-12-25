@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Dad’s Name — Portfolio</title>
+<title>Pyramid Intergrations — Portfolio</title>
 <style>
 :root {
   --primary: #0b3d91;
@@ -13,6 +13,7 @@
 }
 * {box-sizing:border-box;}
 body {margin:0;font-family:Arial;line-height:1.7;color:#222;}
+html {scroll-behavior: smooth;}
 
 /* HERO */
 header {
@@ -72,15 +73,15 @@ footer {background:black;color:#aaa;text-align:center;padding:20px;font-size:0.9
     <h1>Your Dad’s Name</h1>
     <p>Trusted Professional • Proven Experience • Real Results</p>
     <div class="buttons">
-      <a href="learn-more.html" class="btn">Learn More</a>
-      <a href="contact.html" class="btn">Contact Us</a>
+      <a href="#about" class="btn">Learn More</a>
+      <a href="#contact" class="btn">Contact Us</a>
     </div>
   </div>
   <div class="scroll-down">↓ Scroll down</div>
 </header>
 
 <!-- ABOUT -->
-<section class="section light reveal">
+<section id="about" class="section light reveal">
   <div class="container">
     <div class="subtitle">Who I Am</div>
     <h2>About Me</h2>
@@ -119,7 +120,7 @@ footer {background:black;color:#aaa;text-align:center;padding:20px;font-size:0.9
 </section>
 
 <!-- BIG INFO SECTION -->
-<section class="section dark reveal">
+<section id="contact" class="section dark reveal">
   <div class="container">
     <div class="subtitle">Get In Touch</div>
     <h2>Professional Information</h2>
@@ -157,13 +158,13 @@ footer {background:black;color:#aaa;text-align:center;padding:20px;font-size:0.9
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll(".reveal");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){entry.target.classList.add("active");}
-    });
-  }, {threshold:0.15});
-  reveals.forEach(r=>observer.observe(r));
+const reveals = document.querySelectorAll(".reveal");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){entry.target.classList.add("active");}
+  });
+},{threshold:0.15});
+reveals.forEach(r=>observer.observe(r));
 </script>
 
 </body>
