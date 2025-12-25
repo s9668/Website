@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Your Dad’s Name — Professional Portfolio</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Dad’s Name — Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
       margin: 0;
@@ -11,41 +11,67 @@
       line-height: 1.6;
       color: #222;
     }
+
     header {
       background: #0b3d91;
       color: white;
-      padding: 80px 20px;
+      padding: 90px 20px;
       text-align: center;
     }
+
     header h1 {
-      margin: 0;
       font-size: 3rem;
+      margin: 0;
     }
+
     header p {
       font-size: 1.3rem;
       margin-top: 10px;
     }
-    
+
     section {
-      padding: 50px 20px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
     }
+
     h2 {
       color: #0b3d91;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
+
     .box {
-      background: #f8f8f8;
-      margin: 15px 0;
-      padding: 20px;
+      background: #f5f5f5;
+      padding: 25px;
+      margin-bottom: 20px;
       border-radius: 6px;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0b3d91;
+
+    /* BIG BOTTOM INFO SECTION */
+    .info-section {
+      background: #111;
       color: white;
+      padding: 80px 20px;
+    }
+
+    .info-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .info-box h3 {
+      margin-top: 0;
+      color: #4da3ff;
+    }
+
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 15px;
       font-size: 0.9rem;
     }
   </style>
@@ -54,45 +80,74 @@
 
 <header>
   <h1>John Doe</h1>
-  <p>Dedicated Professional Delivering Quality Results</p>
+  <p>Experienced Professional & Trusted Specialist</p>
 </header>
 
 <section>
   <h2>About Me</h2>
   <div class="box">
-    <p>
-      I’m John Doe — a passionate and experienced professional with
-      a strong track record of success in my field. I believe in
-      hard work, excellence, and building lasting relationships with
-      clients.
-    </p>
+    I’m a dedicated professional with years of experience delivering
+    reliable, high-quality work and building long-term trust with clients.
   </div>
 </section>
 
 <section>
   <h2>Services</h2>
-  <div class="box">✔ Service One — Description</div>
-  <div class="box">✔ Service Two — Description</div>
-  <div class="box">✔ Service Three — Description</div>
+  <div class="box">✔ Service One</div>
+  <div class="box">✔ Service Two</div>
+  <div class="box">✔ Service Three</div>
 </section>
 
 <section>
   <h2>Experience</h2>
-  <div class="box"><strong>Company / Project Name</strong><br>Short achievement summary.</div>
-  <div class="box"><strong>Company / Project Name</strong><br>Short achievement summary.</div>
+  <div class="box"><strong>Company / Project</strong><br>Short description of work.</div>
+  <div class="box"><strong>Company / Project</strong><br>Short description of work.</div>
 </section>
 
-<section>
-  <h2>Contact</h2>
-  <div class="box">
-    📧 email@example.com<br>
-    📞 (123) 456-7890
+<!-- BIG BOTTOM INFO AREA -->
+<section class="info-section">
+  <div class="info-container">
+
+    <div class="info-box">
+      <h3>Full Name</h3>
+      <p>John Doe</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Profession</h3>
+      <p>Consultant / Contractor / Specialist</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Location</h3>
+      <p>City, Province, Country</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Contact</h3>
+      <p>
+        Email: email@example.com<br>
+        Phone: (123) 456-7890
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h3>Availability</h3>
+      <p>Open for new opportunities and projects</p>
+    </div>
+
+    <div class="info-box">
+      <h3>Values</h3>
+      <p>Integrity • Quality • Reliability</p>
+    </div>
+
   </div>
 </section>
 
 <footer>
-  © 2025 John Doe — Built by s9668
+  © 2025 John Doe — Portfolio
 </footer>
 
 </body>
 </html>
+
