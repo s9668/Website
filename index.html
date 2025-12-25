@@ -1,149 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Your Dad’s Name — Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Dad’s Name — Portfolio</title>
+<style>
+:root {
+  --primary: #0b3d91;
+  --dark: #111;
+  --light: #f5f5f5;
+  --accent: #4da3ff;
+}
+* {box-sizing:border-box;}
+body {margin:0;font-family:Arial;line-height:1.7;color:#222;}
 
-  <style>
-    :root {
-      --primary: #0b3d91;
-      --dark: #0e0e0e;
-      --light: #f5f5f5;
-      --accent: #4da3ff;
-    }
+/* HERO */
+header {
+  min-height:100vh;
+  background:linear-gradient(135deg, var(--primary), #06295e);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  position:relative;
+}
+header h1 {font-size:3.5rem;margin:0;animation:fadeUp 1s ease forwards;}
+header p {font-size:1.4rem;margin-top:15px;opacity:0;animation:fadeUp 1s ease forwards;animation-delay:0.3s;}
+.scroll-down {
+  position:absolute; bottom:20px; left:50%; transform:translateX(-50%);
+  font-size:1.5rem; color:white; animation:bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,20%,50%,80%,100% {transform:translateX(-50%) translateY(0);}
+  40% {transform:translateX(-50%) translateY(-10px);}
+  60% {transform:translateX(-50%) translateY(-5px);}
+}
 
-    * {
-      box-sizing: border-box;
-    }
+/* SECTIONS */
+.section {padding:100px 20px;}
+.section.light {background:linear-gradient(120deg,#fefcea,#f1da36);}
+.section.gray {background:linear-gradient(120deg,#89f7fe,#66a6ff);}
+.section.dark {background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);color:white;}
+.container {max-width:1100px;margin:auto;}
+.subtitle {text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-size:0.9rem;margin-bottom:10px;}
+h2 {font-size:2.6rem;margin:0 0 30px 0;}
+.card {background:white;padding:30px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,0.08);margin-bottom:30px;}
+.dark .card {background:#1a1a1a;color:white;box-shadow:none;}
+.info-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;}
+.info-box h3 {margin-top:0;color:var(--accent);}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: white;
-      color: #222;
-      line-height: 1.7;
-    }
+/* BUTTONS */
+.buttons {margin-top:30px;}
+.btn {display:inline-block;padding:12px 25px;margin-right:15px;background:var(--accent);color:white;border-radius:5px;text-decoration:none;font-weight:bold;transition:transform 0.2s,box-shadow 0.2s;}
+.btn:hover {transform:translateY(-3px);box-shadow:0 5px 15px rgba(0,0,0,0.2);}
 
-    /* HERO */
-    header {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0b3d91, #06295e);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    header h1 {
-      font-size: 3.5rem;
-      margin: 0;
-      animation: fadeUp 1s ease forwards;
-    }
-
-    header p {
-      font-size: 1.4rem;
-      margin-top: 15px;
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.3s;
-    }
-
-    /* BIG SECTIONS */
-    .section {
-      padding: 100px 20px;
-    }
-
-    .section.light {
-      background: white;
-    }
-
-    .section.gray {
-      background: var(--light);
-    }
-
-    .section.dark {
-      background: var(--dark);
-      color: white;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .subtitle {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--accent);
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 2.6rem;
-      margin: 0 0 30px 0;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
-    }
-
-    .dark .card {
-      background: #1a1a1a;
-      color: white;
-      box-shadow: none;
-    }
-
-    /* INFO GRID */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 40px;
-    }
-
-    .info-box h3 {
-      margin-top: 0;
-      color: var(--accent);
-    }
-
-    /* ANIMATIONS */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    footer {
-      background: black;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-  </style>
+/* ANIMATIONS */
+.reveal {opacity:0;transform:translateY(40px);transition:all 0.8s ease;}
+.reveal.active {opacity:1;transform:translateY(0);}
+@keyframes fadeUp {from {opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+footer {background:black;color:#aaa;text-align:center;padding:20px;font-size:0.9rem;}
+</style>
 </head>
 <body>
 
@@ -152,12 +71,17 @@
   <div>
     <h1>Your Dad’s Name</h1>
     <p>Trusted Professional • Proven Experience • Real Results</p>
+    <div class="buttons">
+      <a href="learn-more.html" class="btn">Learn More</a>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
   </div>
+  <div class="scroll-down">↓ Scroll down</div>
 </header>
 
 <!-- ABOUT -->
-<section class="section light">
-  <div class="container reveal">
+<section class="section light reveal">
+  <div class="container">
     <div class="subtitle">Who I Am</div>
     <h2>About Me</h2>
     <div class="card">
@@ -168,28 +92,25 @@
 </section>
 
 <!-- SERVICES -->
-<section class="section gray">
-  <div class="container reveal">
+<section class="section gray reveal">
+  <div class="container">
     <div class="subtitle">What I Do</div>
     <h2>Services</h2>
-
-    <div class="card">✔ Service One — short explanation</div>
-    <div class="card">✔ Service Two — short explanation</div>
-    <div class="card">✔ Service Three — short explanation</div>
+    <div class="card">✔ Service One — short description</div>
+    <div class="card">✔ Service Two — short description</div>
+    <div class="card">✔ Service Three — short description</div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section class="section light">
-  <div class="container reveal">
+<section class="section light reveal">
+  <div class="container">
     <div class="subtitle">My Background</div>
     <h2>Experience</h2>
-
     <div class="card">
       <strong>Company / Project</strong><br>
       Description of responsibilities and achievements.
     </div>
-
     <div class="card">
       <strong>Company / Project</strong><br>
       Description of responsibilities and achievements.
@@ -198,40 +119,31 @@
 </section>
 
 <!-- BIG INFO SECTION -->
-<section class="section dark">
-  <div class="container reveal">
+<section class="section dark reveal">
+  <div class="container">
     <div class="subtitle">Get In Touch</div>
     <h2>Professional Information</h2>
-
     <div class="info-grid">
       <div class="info-box">
         <h3>Name</h3>
         <p>Your Dad’s Full Name</p>
       </div>
-
       <div class="info-box">
         <h3>Profession</h3>
         <p>Consultant / Contractor / Specialist</p>
       </div>
-
       <div class="info-box">
         <h3>Location</h3>
         <p>City, Province, Country</p>
       </div>
-
       <div class="info-box">
         <h3>Contact</h3>
-        <p>
-          Email: email@example.com<br>
-          Phone: (123) 456-7890
-        </p>
+        <p>Email: email@example.com<br>Phone: (123) 456-7890</p>
       </div>
-
       <div class="info-box">
         <h3>Availability</h3>
         <p>Open for new opportunities</p>
       </div>
-
       <div class="info-box">
         <h3>Values</h3>
         <p>Integrity • Quality • Reliability</p>
@@ -246,16 +158,12 @@
 
 <script>
   const reveals = document.querySelectorAll(".reveal");
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
+      if(entry.isIntersecting){entry.target.classList.add("active");}
     });
-  }, { threshold: 0.15 });
-
-  reveals.forEach(r => observer.observe(r));
+  }, {threshold:0.15});
+  reveals.forEach(r=>observer.observe(r));
 </script>
 
 </body>
